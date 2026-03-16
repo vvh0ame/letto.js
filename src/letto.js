@@ -23,7 +23,7 @@ class Letto {
 
 	async signUp(email, password, nickname) {
 		const response = await fetch(
-			`${this.api}/users?email=${email}&password=${password}&nickname=${nickname}&invite_code`, {
+			`${this.api}/users?email=${email}&password=${password}&nickname=${nickname}`, {
 				method: "POST",
 				headers: this.headers
 			})
@@ -123,7 +123,7 @@ class Letto {
 	async getNotifications(offset = 0, limit = 20) {
 		const response = await fetch(
 			`${this.api}/notifications?offset=${offset}&limit=${limit}`, {
-				method: "DELETE",
+				method: "GET",
 				headers: this.headers
 			})
 		return response.json()
